@@ -2,7 +2,7 @@ group 'com.cywings.http2client'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-
+apply plugin: 'application'
 sourceCompatibility = 1.8
 
 repositories {
@@ -12,4 +12,8 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    // https://mvnrepository.com/artifact/org.mortbay.jetty.alpn/alpn-boot
+    testCompile group: 'org.mortbay.jetty.alpn', name: 'alpn-boot', version: '8.1.11.v20170118'
+    // https://mvnrepository.com/artifact/org.mortbay.jetty.alpn/jetty-alpn-agent
+    compile group: 'org.mortbay.jetty.alpn', name: 'jetty-alpn-agent', version: '2.0.6'
 }
