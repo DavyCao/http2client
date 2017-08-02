@@ -17,3 +17,14 @@ dependencies {
     // https://mvnrepository.com/artifact/org.mortbay.jetty.alpn/jetty-alpn-agent
     compile group: 'org.mortbay.jetty.alpn', name: 'jetty-alpn-agent', version: '2.0.6'
 }
+
+jar {
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes 'Main-Class': 'http2client'
+    }
+}
